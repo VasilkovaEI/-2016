@@ -1,4 +1,4 @@
-from drawmen import *
+from drawman import *
 from time import sleep
 
 A = [(0,0), (100, 0), (100,100), (0, 100)]
