@@ -1,11 +1,11 @@
-from drawmen import *
+from drawman import *
 from time import sleep
 
 def f(x):
     return x*x
 
 print(drawman_scale)
-drawman_scale = 20
+drawman_scale(100)
 x = -5.0
 to_point(x, f(x))
 pen_down()
