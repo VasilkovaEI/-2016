@@ -14,5 +14,5 @@ while x <= 5:
     x += 0.1
 pen_up()
 
-sleep(10)
+sleep(7)
 
