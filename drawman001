@@ -1,26 +1,57 @@
 from turtle import Turtle
 default_scale = 10
+default_color = 'black'#Цвет
+default_pen_size = 2 #Толщина линии
 
 def init_drawman():
-    global t, x_current, y_current, _drawman_scale
-    shag=40
-    vod = 1
+    global t, x_current, y_current, _drawman_scale, _drawman_pen_size
     t = Turtle()
     t.penup()
+    shag = 40
+    vod = 0.5
     x_current = 0
     y_current = 0
     t.goto(x_current, y_current)
-    drawman_scale(shag,vod)
+    drawman_scale(default_scale, shag, vod)
+    drawman_pen_size(default_pen_size)
 
 
-def drawman_scale(shag,vod):
-    global _drawman_scale,_shag,_vod
-    #shag - шаг сетки
-    #vod - количество единиц в одном делении сетки
+#drawman_scale_2(shag, vod)
+
+"""def drawman_scale_2(shag,vod):
+    global _drawman_scale,
+    _drawman_scale = shag/vod
+    # print(_shag,_vod,_drawman_scale)
+"""
+def drawman_scale(scale, shag, vod):
+    global _drawman_scale, _shag,_vod
+    '''
+    Масштаб
+    shag - шаг сетки
+    vod - единиц в одном делении сетки
+    '''
     _shag = shag
     _vod = vod
-    _drawman_scale = shag/vod
+    _drawman_scale = scale
 
+def drawman_pen_size(pen_size):
+    """Установка толщины линии Чертежника
+    :param pen_size: толщина линии Чертежника, диапазон от 1 до 10
+    """
+    global _drawman_pen_size
+    if pen_size > 10:
+        _drawman_pen_size = t.pensize(10)
+    elif pen_size < 1:
+        _drawman_pen_size = t.pensize(1)
+    else:
+        _drawman_pen_size = t.pensize(pen_size)
+
+# https://github.com/dinaflox/python0716/blob/master/drawman.py
+def drawman_color(color):
+    global _drawman_color
+    _drawman_color = color
+    t.color(color)
+    
 def test_drawman():
     """
     Тестирование работы Чертёжника
