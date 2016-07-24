@@ -1,0 +1,35 @@
+from drawman001 import *
+import math
+shag =30
+vod = 1
+drawman_scale(default_scale, shag,vod)
+novid()
+col()
+size()
+axis()
+grid()
+edin()
+
+pen_down()
+# График функции
+col('lightblue')
+pen_width(wid=7)
+x = -7.0
+pen_up()
+y=math.sin(x)
+to_point(x, y)
+pen_down()
+while x <= 11:
+    x += 0.3
+    y=math.sin(x)
+    to_point(x,y)
+
+pen_up()
+
+
+# Возврат в начало
+x_current = 0
+y_current = 0
+to_point(0, 0)
+pen_down()
+pen_width(5)
