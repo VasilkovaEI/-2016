@@ -1,0 +1,31 @@
+from drawman001 import *
+from time import sleep
+
+
+shag = 60
+vod = 1
+drawman_scale(shag,vod)
+novid()
+col()
+size()
+axis()
+grid()
+edin()
+
+pen_down()
+def f(x):
+    return x*x
+
+col('lightblue')
+pen_width(wid=5)
+print(drawman_scale)
+drawman_scale(60,1)
+x = -5.0
+to_point(x, f(x))
+pen_down()
+while x <= 5:
+    to_point(x, f(x))
+    x += 0.1
+pen_up()
+
+
