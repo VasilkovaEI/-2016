@@ -3,7 +3,6 @@ import tkinter
 def button1_command():
     print('Button 1 default command.')
 
-
 def print_hello(event):
     #print(event.char)
     #print(event.keycode)
@@ -19,34 +18,14 @@ def print_hello(event):
     else:
         raise ValueError()
 
+root = tkinter.Tk()
 
-def inint_main_window():
-    """
-    Инициализация главного окна: создание всех необходимых виджетов и их упаковка.
-    :return:
-    """
-    global root, button1, button2, label, text, scale
+button1 = tkinter.Button(root, text="Button 1", command=button1_command)
+button1.bind("<Button>", print_hello)
+button1.pack()
 
-    root = tkinter.Tk()
+button2 = tkinter.Button(root, text="Button 2", command=button1_command)
+button2.bind("<Button>", print_hello)
+button2.pack()
 
-    button1 = tkinter.Button(root, text="Button 1", command = button1_command)
-    button1.bind("<Button>", print_hello)
-    button1.pack()
-
-    button2 = tkinter.Button(root, text="Button 2")
-    button2.bind("<Button>", print_hello)
-    button2.pack()
-
-    varible = tkinter.IntVar()
-    label = tkinter.Label(root, text='Some text.')
-    scale = tkinter.Scale(root)
-    text = tkinter.Entry(root)
-
-    for obj in button1, button2, label, scale, text:
-      obj.pack()
-
-
-if __name__== "_main__":
-    init_main_window()
-
-    root.mainloop()
+root.mainloop()
